@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SORAYA STAR | Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background: #070711;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background */
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+    radial-gradient(circle at 20% 30%, #30106b55, transparent 40%),
+    radial-gradient(circle at 80% 70%, #092f7655, transparent 40%),
+    #070711;
+    z-index: -2;
+}
+
+.grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+    linear-gradient(#ffffff08 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: linear-gradient(to bottom, black, transparent);
+    z-index: -1;
+}
+
+/* Stars */
+
+.star {
+    position: fixed;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: .2; }
+    50% { opacity: 1; }
+}
+
+/* Login Container */
+
+.container {
+    width: 420px;
+    max-width: 92%;
+    padding: 45px 38px;
+    background: rgba(17, 17, 35, 0.78);
+    border: 1px solid rgba(145, 95, 255, .3);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow:
+    0 0 40px #6c2bff20,
+    inset 0 0 30px #ffffff05;
+    position: relative;
+    animation: appear .8s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo */
+
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #a56cff, #4d9dff);
+    -webkit-background-clip : text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo p {
+    color: #777995;
+    font-size: 10px;
+    letter-spacing: 5px;
+    margin-top: 9px;
+}
+
+/* Title */
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.title p {
+    color: #85859d;
+    font-size: 13px;
+}
+
+/* Inputs */
+
+.input-group {
+    margin-bottom: 22px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 12px;
+    color: #b8b6d0;
+    margin-bottom: 10px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: #101020;
+    border: 1px solid #292943;
+    border-radius: 9px;
+    color: white;
+    outline: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.input-group input:focus {
+    border-color: #9861ff;
+    box-shadow: 0 0 15px #873cff30;
+}
+
+.input-group input::placeholder {
+    color: #62627c;
+}
+
+/* Password */
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 65px;
+}
+
+.toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #a78bfa;
+    cursor: pointer;
+    font-size: 11px;
+}
+
+/* Options */
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    margin: 5px 0 25px;
+    color: #9999b0;
+}
+
+.options a {
+    color: #a78bfa;
+    text-decoration: none;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* Button */
+
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(100deg, #783bff, #367cff);
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #713bff70;
+}
+
+/* Register */
+
+.register {
+    text-align: center;
+    margin-top: 25px;
+    color: #85859d;
+    font-size: 12px;
+}
+
+.register a {
+    color: #a78bfa;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 9px;
+    color: #555570;
+    letter-spacing: 2px;
+}
+
+/* Responsive */
+
+@media(max-width: 480px) {
+    .container {
+        padding: 35px 25px;
+    }
+
+    .logo h1 {
+        font-size: 21px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="grid"></div>
+
+<div class="container">
+
+    <div class="logo">
+        <h1>SORAYA STAR</h1>
+        <p>GAME STUDIO</p>
+    </div>
+
+    <div class="title">
+        <h2>Welcome Back</h2>
+        <p>Enter your account and explore new worlds.</p>
+    </div>
+
+    <form id="loginForm">
+
+        <div class="input-group">
+            <label>Email Address</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+            >
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+
+            <div class="password-box">
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                    minlength="8"
+                >
+
+                <button
+                    type="button"
+                    class="toggle"
+                    id="togglePassword"
+                >
+                    SHOW
+                </button>
+            </div>
+        </div>
+
+        <div class="options">
+
+            <label class="remember">
+                <input type="checkbox">
+                Remember me
+            </label>
+
+            <a href="#">Forgot Password?</a>
+
+        </div>
+
+        <button type="submit" class="login-btn">
+            LOGIN
+        </button>
+
+    </form>
+
+    <div class="register">
+        Don't have an account?
+        <a href="#">Create Account</a>
+    </div>
+
+    <div class="footer">
+        © 2026 SORAYA STAR STUDIO
+    </div>
+
+</div>
+
+<script>
+
+// Generate stars
+
+for (let i = 0; i < 80; i++) {
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay =
+        Math.random() * 3 + "s";
+
+    document.body.appendChild(star);
+}
+
+// Show / Hide Password
+
+const password = document.getElementById("password");
+const toggle = document.getElementById("togglePassword");
+
+toggle.addEventListener("click", () => {
+
+    if (password.type === "password") {
+
+        password.type = "text";
+        toggle.textContent = "HIDE";
+
+    } else {
+
+        password.type = "password";
+        toggle.textContent = "SHOW";
+
+    }
+
+});
+
+// Login Form
+
+document.getElementById("loginForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const email =
+        document.getElementById("email").value;
+
+    const pass =
+        document.getElementById("password").value;
+
+    if (!email || !pass) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    alert("Login interface is ready! Connect your authentication backend.");
+
+});
+
+</script>
+
+</body>
+</html>
