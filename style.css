@@ -1626,3 +1626,79 @@ width:240px;
     touch-action:pan-y;
 
 }
+
+/* ==========================
+LOGIN BUTTON
+========================== */
+
+.login-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 22px;
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: linear-gradient(100deg, #783bff, #367cff);
+    box-shadow: 0 0 15px #783bff40;
+    transition: .3s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.login-nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--purple);
+}
+
+/* MOBILE LOGIN */
+
+@media(max-width:900px) {
+
+    .navbar {
+        width: 94%;
+        left: 3%;
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 17px;
+        letter-spacing: 2px;
+    }
+
+    .login-nav-btn {
+        padding: 9px 12px;
+        font-size: 10px;
+    }
+
+    .menu-btn {
+        font-size: 27px;
+        flex-shrink: 0;
+    }
+
+}
+
+@media(max-width:450px) {
+
+    .logo {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .login-nav-btn {
+        padding: 8px 9px;
+        font-size: 9px;
+        gap: 5px;
+    }
+
+    .menu-btn {
+        font-size: 24px;
+    }
+
+}
